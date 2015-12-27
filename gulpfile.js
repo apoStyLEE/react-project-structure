@@ -25,8 +25,8 @@ function build() {
       .pipe(source(definations.compiledJsFileName))
       .pipe(buffer())
       .pipe(production(uglify()))
-      .pipe(production(sourcemaps.init({ loadMaps: true })))
-      .pipe(production(sourcemaps.write('./')))      
+      .pipe(development(sourcemaps.init({ loadMaps: true })))
+      .pipe(development(sourcemaps.write('./')))      
       .pipe(gulp.dest(definations.destinationJsFolder));  
 }
 
